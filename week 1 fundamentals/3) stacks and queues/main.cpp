@@ -108,10 +108,31 @@ string reverseStringStack(string s){
 
 }
 
+vector<int> nextGreaterElements(vector<int> v){
+
+    vector<int> output(v.size());
+    stack<int> elements;
+
+    for (int i = v.size()-1; i >= 0; i--){
+        while (!elements.empty() && v[i] > elements.top()) elements.pop();
+        if (elements.empty()) output[i] = -1;
+        else output[i] = elements.top();
+        elements.push(v[i]);
+    }
+
+    return output;
+}
+
 int main(int argc,char **argv) {
 
     /*string s = "hello world";
     cout << reverseStringStack(s) << endl;*/
+
+    vector<int> v = {4, 5, 2, 10, 8};
+
+    v = nextGreaterElements(v);
+    for (int n : v) cout << n << " ";
+    cout << endl;
 
     return 0;
 
