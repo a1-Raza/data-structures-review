@@ -65,6 +65,7 @@
     "algorithm": "cpp",
     "stack": "cpp",
     "__split_buffer": "cpp",
-    "deque": "cpp"
+    "deque": "cpp",
+    "queue": "cpp"
   }
 }
